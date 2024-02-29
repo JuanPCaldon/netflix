@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./MovieDetails.module.css"
 import { useParams } from 'react-router-dom'
-
-
-
-
+import { Spiner } from '../components/Spiner';
 
 
 export const MovieDetails = () => {
@@ -13,6 +10,7 @@ export const MovieDetails = () => {
   const imgurl= 'https://image.tmdb.org/t/p/w500/'+imagen;
   //
   //--------------------------------------LLAMADA A LA APi--------------------------------------
+  const [isLoading, setisLoading] = useState(true);
   const [movieList,setMovieList ] = useState([]) 
 
   const getmovie =() =>{
@@ -22,8 +20,17 @@ export const MovieDetails = () => {
   }
 
   useEffect(()=>{
-      getmovie()
+     setisLoading(true);
+     getmovie()
+     setisLoading(false); 
   },[])  
+
+  if(isLoading){
+    return <Spiner/> ;
+
+  }
+
+
   
   const {genres}= movieList; 
   
