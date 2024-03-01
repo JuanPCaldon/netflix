@@ -1,10 +1,10 @@
 import React from 'react'
 import { MoviesGrid } from '../components/MoviesGrid'
 
-export const LandingPages = ({movies}) => {
+export const LandingPages = () => {
 
   // console.log(movies)
   return (
-    <MoviesGrid movies={movies} />
+    <MoviesGrid  />
   )
 }

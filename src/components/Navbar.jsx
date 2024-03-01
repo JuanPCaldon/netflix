@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
+import { Search } from './Search'
 
 
 export const Navbar = () => {
@@ -20,7 +21,7 @@ export const Navbar = () => {
         </ul>
         <div className={styles.secondary}>
 
-            <div className={styles.secondnavbar}> Search  </div>  
+            <div className={styles.secondnavbar}> <Search/> </div>  
             <div className={styles.secondnavbar}>  alert  </div>
             <div className={styles.secondnavbar}> butonhambur</div>
 
