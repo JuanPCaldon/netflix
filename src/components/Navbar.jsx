@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
 import { Search } from './Search'
+import { MdOutlineNotifications } from "react-icons/md"
 
 
 export const Navbar = () => {
@@ -22,7 +23,7 @@ export const Navbar = () => {
         <div className={styles.secondary}>
 
             <div className={styles.secondnavbar}> <Search/> </div>  
-            <div className={styles.secondnavbar}>  alert  </div>
+            <div className={styles.secondnavbar}>  <MdOutlineNotifications size={25} />  </div>
             <div className={styles.secondnavbar}> butonhambur</div>
 
         </div>

@@ -18,9 +18,6 @@ export const Search = () => {
   }, [Search])
   
 
-
-
-
   const handleSubmit =(event) => {
 
       event.preventDefault();
@@ -33,6 +30,7 @@ export const Search = () => {
         <div className={styles.searchBox} >
             <input 
               className={styles.searchInput} 
+              placeholder='Titulos,personas,generos'
               type="text" value={searchText} 
               onChange={ (e)=> {
                   const value = e.target.value;
@@ -40,7 +38,7 @@ export const Search = () => {
                   navigate("/?search="+value);
                   }}/>
               <button className={styles.searchButton} type='submit'> 
-               <FaSearch/>
+               <FaSearch size={18} color='white'/>
               </button>
         </div>
 
