@@ -26,8 +26,8 @@
 }
 
 .searchInput{
-    height: 20px;
     width: 0px;
+    height: 20px;
     padding:0 15px;
     font-size: 18px;
     color: black;

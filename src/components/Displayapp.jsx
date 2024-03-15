@@ -5,7 +5,7 @@ export const Displayapp = () => {
   return (
    
    
-    <div className={styles.descripcionPeli}>
+         <div className={styles.descripcionPeli}>
 
           <img src="" alt="logoPeli" />
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus tempus velit eget rutrum.

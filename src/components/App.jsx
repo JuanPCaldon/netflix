@@ -12,15 +12,18 @@ export const App = () => {
   return (
     <Router>
       <div className={styles.baggraundvideo}>
-        <header>
-            <Navbar/>      
-        </header> 
+            <header>
+                <Navbar/>      
+            </header>  
             
-            <Displayapp/>
+      </div>
 
+      <div>
+        
+            <Displayapp/>
       </div>  
 
-        <main>
+      <main>
           <Routes>
            <Route path="/" element= {<LandingPages />}/> 
            <Route path="/movies/:movieId/:imagen" element = {<MovieDetails/> }/> 
