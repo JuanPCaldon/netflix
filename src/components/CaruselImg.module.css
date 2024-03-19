@@ -1,0 +1,37 @@
+
+
+.imgcarousel{
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.imgcarousel:hover{
+
+    transform: scale(1.5)
+   
+}
+.indicatorCarousel{
+    
+   display: none;
+    position: absolute;
+    top: 10px;
+    justify-content: end;
+    
+}
+
+.prev:hover  .indicatorCarousel{
+
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+.nexto:hover + .indicatorCarousel {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+
+}
+
