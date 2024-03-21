@@ -2,6 +2,7 @@
 
 .imgcarousel{
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 
 }
 
@@ -11,27 +12,34 @@
    
 }
 .indicatorCarousel{
-    
-   display: none;
     position: absolute;
     top: 10px;
     justify-content: end;
     
 }
 
-.prev:hover  .indicatorCarousel{
+.tituloycarousel{
+    display: grid;
+   
+}
 
-    display: block;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+.TituloCarousel{
+
+    margin-left: 3rem ;
+    margin-bottom: -2rem;
+    font-size: 25px;
+}
+
+
+.prevbutton{
+
+      width: 2rem;
 
 }
 
-.nexto:hover + .indicatorCarousel {
-    display: block;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+.nextbutton{
+
+    width: 2rem;
 
 
 }
-
