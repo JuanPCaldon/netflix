@@ -3,6 +3,7 @@ import { useQuery } from '../hooks/useQuery';
 import { Spiner } from './Spiner';
 import { MovieCard } from './MovieCard';
 import styles from './CaruselImg.module.css'
+import { Link } from 'react-router-dom';
 
 
 export const CaruselImg = () => {
@@ -36,13 +37,7 @@ if(Isloading){
    return <Spiner/>
 } 
 
-const handleclick = (movie) =>{
 
-  setPeliculas( 
-     <MovieCard id={movie.id} titulo={movie.title} imagen={movie.poster_path} />
-  )
-   // 
-}
 
 //console.log(movieList)
   return (
@@ -63,17 +58,22 @@ const handleclick = (movie) =>{
               
                  <div className={'d-flex justify-content-center p-5'}>
                       { movieList.map((movie, index) => ( 
-                        
-                           
-                            index < 6 && <img key={movie.id} class= {`${styles.imgcarousel} + d-block w-100 m-1 rounded `}
+                          
+                        <Link   to={"/movies/"+movie.id+movie.poster_path}>
+
+                          {
+                            index < 6 && <img key={movie.id} 
+                            className={`${styles.imgcarousel} + d-block w-100 ms-2 p-1`}
                             src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                             width={230}
                             height={345}
-                            onClick={()=>handleclick(movie)}
-                            
+                           
                             />
+                             
+                             }                     
+                         </Link>
                       
-                        )) }  
+                      )) }  
                   </div>
               </div>
           </div>
