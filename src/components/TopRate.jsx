@@ -3,20 +3,21 @@ import styles from './CaruselImg.module.css'
 import { Link } from 'react-router-dom'
 
 
-export const Nowplay = () => {
+export const TopRate = () => {
 
   const [movieList,setMovieList ] = useState([]) 
   const [page,setpage]=useState(1)
 
-  const url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
 
+  const url = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
   const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDY3MzI4NzFhNmU5NTEzZGZlYzRhMGE3NTgyMWNjNCIsInN1YiI6IjY1ZDY0YTU3ZTZkM2NjMDE3YmMwZTU1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oEACcqWQmCfHMobWqDCq3lkVnfEY5GLT5lk0ksm-56k'
-  }
-};
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDY3MzI4NzFhNmU5NTEzZGZlYzRhMGE3NTgyMWNjNCIsInN1YiI6IjY1ZDY0YTU3ZTZkM2NjMDE3YmMwZTU1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oEACcqWQmCfHMobWqDCq3lkVnfEY5GLT5lk0ksm-56k'
+    }
+  };
+  
   useEffect(()=>{ 
 
     fetch(url, options)
@@ -35,10 +36,9 @@ export const Nowplay = () => {
   
   return (
 
-  <div id='nowplay'>
+    <div id='toprate'>
 
-
- 
+    
     <div id="carouselExampleIndicators" class="carousel slide">
     <div class={`carousel-indicators`}>
        
@@ -48,7 +48,7 @@ export const Nowplay = () => {
 
     </div>
     <div class="carousel-inner">
-        <h1 className={styles.TituloCarousel}> Ver ahora </h1>
+        <h1 className={styles.TituloCarousel}> Lo mas valorado </h1>
           <div class="carousel-item active">
             <div className={styles.tituloycarousel}>
               
@@ -56,13 +56,13 @@ export const Nowplay = () => {
                    
 
                       { 
-                          Seccion1.map((movie) => ( 
+                          Seccion1.map((movie,index) => ( 
                           
                             <Link   to={"/movies/"+movie.id+movie.poster_path}>
                               
                               {   
                                   
-                                    <img key={movie.id} 
+                                    <img key={index} 
                                     className={`${styles.imgcarousel} + d-block w-100 ms-2 p-1`}
                                     src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                                     width={230}
@@ -149,6 +149,7 @@ export const Nowplay = () => {
     </button>
   </div>
   </div>
+
     
 
 
@@ -158,3 +159,9 @@ export const Nowplay = () => {
 
   )
 }
+
+
+
+
+
+
