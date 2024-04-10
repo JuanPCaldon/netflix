@@ -1,22 +1,79 @@
 
 .baggraundvideo{  
     height: 5rem;
+  
 }
+.navbar{
+   
+ 
 
+}
 .descripcionPeli{
-    margin-left: 9rem;
-    margin-top: 8rem;
-    max-width: 15rem;
+    margin-left: 4rem;
+    margin-top: 10rem;
+    max-width: 18rem;
+    
 }
 
-.botonesBackgraound{
-    display: inline-block;
-    margin: 0 10px ;
+.botonesBackgraoundR{
+    height: 2.5rem;
+    width: 20rem;
+    border-style: none;
+    border-radius: 5px;
+
+    
 }
+
+.botonesBackgraoundI{
+    height: 2.5rem;
+    width: 20rem;
+    color:aliceblue;
+    background-color: gray;
+    border-style: none;
+    border-radius: 5px;
+    
+
+
+}
+
+
 
 main{
 
         margin-top: 5rem;
 
 }
+.displaybotones{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+
+
+} 
+
+
+.botonesmut{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 4%;
+    gap: 1rem;
+}
+
+.buttommut{
+    background-color: transparent;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.buttommut :active{
+    
+    opacity: 0.8;
+    
+
+}
+
+
 

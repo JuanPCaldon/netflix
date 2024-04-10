@@ -1,54 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import styles from './CaruselImg.module.css'
 import { Link } from 'react-router-dom'
+export const Popular = () => {
 
-
-export const TopRate = () => {
-
-  const [movieList,setMovieList ] = useState([]) 
-  const [page,setpage]=useState(1)
-
-
-  const url = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
-  const options = {
+    const [movieList,setMovieList ] = useState([]) 
+    const [page,setpage]=useState(1)
+  
+    const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`;
+    const options = {
     method: 'GET',
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDY3MzI4NzFhNmU5NTEzZGZlYzRhMGE3NTgyMWNjNCIsInN1YiI6IjY1ZDY0YTU3ZTZkM2NjMDE3YmMwZTU1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oEACcqWQmCfHMobWqDCq3lkVnfEY5GLT5lk0ksm-56k'
-    }
-  };
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDY3MzI4NzFhNmU5NTEzZGZlYzRhMGE3NTgyMWNjNCIsInN1YiI6IjY1ZDY0YTU3ZTZkM2NjMDE3YmMwZTU1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oEACcqWQmCfHMobWqDCq3lkVnfEY5GLT5lk0ksm-56k'
+  }
+};
+
+    useEffect(()=>{ 
   
-  useEffect(()=>{ 
-
-    fetch(url, options)
-    .then(res => res.json())
-    .then(json => setMovieList(json.results))
-    .catch(err => console.error('error:' + err));
-  
-   },[])
-
-
-     const Seccion1 = movieList.slice(0, 6)
-     const Seccion2 = movieList.slice(7, 13)
-     const Seccion3 = movieList.slice(14, 20)
+      fetch(url, options)
+      .then(res => res.json())
+      .then(json => setMovieList(json.results))
+      .catch(err => console.error('error:' + err));
     
+     },[])
   
   
+       const Seccion1 = movieList.slice(0, 6)
+       const Seccion2 = movieList.slice(7, 13)
+       const Seccion3 = movieList.slice(14, 20)      
+
+
+
   return (
-
-    <div id='toprate'>
-
-    
-    <div id="carousel2" class="carousel slide">
+    <div>
+         <div id="carousel3" class="carousel slide">
     <div class={`carousel-indicators`}>
        
-      <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2" aria-label="Slide 3"></button>
 
     </div>
     <div class="carousel-inner">
-        <h1 className={styles.TituloCarousel}> Lo mas valorado </h1>
+        <h1 className={styles.TituloCarousel}> Popular </h1>
           <div class="carousel-item active">
             <div className={styles.tituloycarousel}>
               
@@ -56,13 +50,13 @@ export const TopRate = () => {
                    
 
                       { 
-                          Seccion1.map((movie,index) => ( 
+                          Seccion1.map((movie) => ( 
                           
-                            <Link   to={"/movies/"+movie.id+movie.poster_path}>
+                            <Link  to={"/movies/"+movie.id+movie.poster_path}>
                               
                               {   
                                   
-                                    <img key={index} 
+                                    <img key={movie.id} 
                                     className={`${styles.imgcarousel} + d-block w-100 ms-2 p-1`}
                                     src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                                     width={230}
@@ -132,19 +126,23 @@ export const TopRate = () => {
          </div>
      </div>   
    
+
+
     </div>
 
-    <button class={`${styles.prevbutton} + carousel-control-prev`} type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+|
+
+
+    <button class={`${styles.prevbutton} + carousel-control-prev`} type="button" data-bs-target="#carousel3" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class={`${styles.nextbutton} + carousel-control-next`} type="button" data-bs-target="#carousel2" data-bs-slide="next">
+    <button class={`${styles.nextbutton} + carousel-control-next`} type="button" data-bs-target="#carousel3" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
   </div>
-
     
 
 
@@ -152,11 +150,8 @@ export const TopRate = () => {
 
 
 
+
+
+  
   )
 }
-
-
-
-
-
-

@@ -1,7 +1,9 @@
 
 .navbar{
  display: flex;
- align-items: center;
+ align-items:center;
+ position: relative;
+ ;
  
 }
 
@@ -13,9 +15,11 @@
 }
 
 .li{
+    align-items: center;
     list-style: none;
     display: inline-block;
     padding: 0 10px;
+    margin-top: 1.5rem;
 }
 
 
@@ -34,7 +38,6 @@
 
 .netflix{
     
-    margin:10px -20px 0px 41px;
     width: 92.5px;
     height: 41px;
     color: #e50914;
@@ -42,14 +45,20 @@
 
 .secondary{
     display: flex;
+    align-items: center;
     position: absolute;
     right: 4%;
-    top: 20px;
+    
 }
 
 .secondnavbar{
 
     padding: 0 10px;
 
+
+}
+
+.ul .secondary{
+   align-items: center;
 
 }

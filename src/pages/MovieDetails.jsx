@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from "./MovieDetails.module.css"
 import { useParams } from 'react-router-dom'
 import { Spiner } from '../components/Spiner';
+import { Navbar } from '../components/Navbar';
 
 
 export const MovieDetails = () => {
@@ -37,6 +38,8 @@ export const MovieDetails = () => {
   return (
     <div 
          className={styles.detailsContainer}>
+
+          
           <img className={styles.col+" "+styles.movieImg}
            src={imgurl}
            alt=""/>

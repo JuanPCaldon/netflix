@@ -16,12 +16,13 @@
     position: absolute;
     right: 0;
     top: 0;
-    background: black;
+    background-color: transparent;
     height: 100%;
     text-align: center;
     color: white;
     cursor: pointer;
-    border: none;
+    border-style: none;
+
 
 }
 
@@ -30,11 +31,18 @@
     height: 20px;
     padding:0 15px;
     font-size: 18px;
-    color: black;
-    outline: none;
-    border: 1px solid silver;
+    color: white;
+    
     transition:  all 0.6s ease;
-   
+    background-color: transparent;
+    border-style: none;
+}
+
+::placeholder{
+    color: white;
+
+
+
 }
 .searchInput:focus{
     outline: none;
